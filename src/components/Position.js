@@ -1,16 +1,20 @@
 import React from 'react';
 
-const Position = ({name, defaultChecked, selected, radioHandler}) => {
-  return (
+const Position = ({nameAndId, selectedPosition, selectedPositionId , radioHandler}) => {
+  console.log("name&id", nameAndId)
+
+
+
+    return (
     <div>
       <input
         type="radio"
-        name={name}
-        value={name}
-        onClick={(e)=>radioHandler(e)}
-        checked={selected === name}
+        name={nameAndId.name}
+        value={JSON.stringify(nameAndId)}
+        onClick={e=>radioHandler(e)}
+        checked={selectedPosition === nameAndId.name}
       />{' '}
-      {name}
+      {nameAndId.name}
     </div>
   );
 };
