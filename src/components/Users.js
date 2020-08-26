@@ -4,15 +4,21 @@ import authHandler from '../requests/authHandler';
 import {getUsers, getPositions} from '../requests/fetchData';
 import User from './User';
 import RegisterForm from './RegisterForm';
+import { useStateValue } from '../contexts/stateProvider';
+import { INCREASE_QUANTITY } from '../contexts/reducer';
 
 export const Users = () => {
+const [{counter}, dispatch] = useStateValue()
+console.log(counter)
   const [users, setUsers] = useState([]);
   const [positions, setPositions] = useState([])
-
+  // const [countOfUsersToDisplay, setCount] = useState(6);
+  const [showMoreVisible, toggleShowMore] = useState(true)
   useEffect(() => {
     async function fetchData() {
       await authHandler();
-      const users =  await getUsers();
+      const users =  await getUsers(counter);
+      if(users.length<counter ) toggleShowMore(false)
       setUsers(users);
       console.log(users);
 
@@ -23,7 +29,11 @@ export const Users = () => {
 
     }
     fetchData();
-  }, []);
+  }, [counter]);
+
+  const getMoreUsers=async ()=>{
+    dispatch({type:INCREASE_QUANTITY})
+  }
   return (
     <div>
     
@@ -39,8 +49,9 @@ export const Users = () => {
         ></User>
       ))}
       </div>
+      {showMoreVisible ? <button onClick={getMoreUsers}>Show more</button>:<div></div>}
       <div>
-      <RegisterForm positions={positions}/>
+      <RegisterForm positions={positions} setUsers/>
       </div>
     </div>
   );

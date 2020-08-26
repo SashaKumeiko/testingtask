@@ -1,8 +1,8 @@
 import axios from 'axios';
  
- export const getUsers = ()  => {
+ export const getUsers = (count)  => {
     return axios.get(
-        'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=5'
+        `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=${count}`
       ).then(res=>res.data.users)
     
 }

@@ -10,14 +10,14 @@ const authHandler = () => {
   }
 };
 
-const handleNewToken=()=>{
+export const handleNewToken=()=>{
    return getTokenFromServer().then((res) => {
         console.log(res.data.token);
         setToken(res.data.token)
       });
 }
 
-const getTokenFromServer = async () => {
+export const getTokenFromServer = async () => {
   return await axios.get(
     'https://frontend-test-assignment-api.abz.agency/api/v1/token'
   );

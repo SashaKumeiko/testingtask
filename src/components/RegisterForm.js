@@ -2,6 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import Position from './Position';
+import signUp from '../requests/signUp';
+import { useStateValue } from '../contexts/stateProvider';
+import { RESET_QUANTITY } from '../contexts/reducer';
+
+
 
 const RegisterSchema = Yup.object().shape({
   email: Yup.string().required('Email is required').email('Enter valid email'),
@@ -18,10 +23,11 @@ const RegisterSchema = Yup.object().shape({
     }),
 });
 
-const RegisterForm = ({positions}) => {
+const RegisterForm = ({positions, setUsers}) => {
   const [selectedPosition, setSelectedPosition] = useState('');
   const [selectedPositionId, setSelectedId] = useState('');
-  const [file, setFile] = useState(null)
+  const [photo, setFile] = useState(null)
+  const [state, dispatch] = useStateValue();
 
   useEffect(() => {
     if (positions.length) {
@@ -39,15 +45,10 @@ const RegisterForm = ({positions}) => {
   const onChangeFiles=(e)=>{
     setFile(e.target.files[0])
   }
-  console.log(file)
-
+  console.log(photo)
   return (
     <div>
-    <form >
-    <h1>File Upload</h1>
-    <input type="file" onChange={onChangeFiles} />
-    <button type="submit">Upload</button>
-    </form>
+    
       {positions.map(({id, name}) => (
         <Position
           key={id}
@@ -58,18 +59,29 @@ const RegisterForm = ({positions}) => {
         />
       ))}
       <Formik
+        setUsers={setUsers}
         positions={positions}
-        file
-        selectedPosition
+        photo
         setSelectedId
         initialValues={{
           email: '',
           name: '',
           phone: '',
+          photo: null
         }}
         validationSchema={RegisterSchema}
-        onSubmit={(values) => {
-          console.log(values, selectedPosition, selectedPositionId, file);
+        onSubmit={ async (values) => {
+          if(!photo) {
+            alert("select the file!");
+            return
+        }
+          values.position_id = selectedPositionId;
+          values.photo = photo
+          console.log(values);
+         if(await signUp(values)){
+          dispatch({type:RESET_QUANTITY})
+         }
+
         }}
       >
         {({
@@ -123,9 +135,13 @@ const RegisterForm = ({positions}) => {
                 label="Phone number"
                 required
               />
-
+              <form >
+              <h1>File Upload</h1>
+              <input type="file" onChange={onChangeFiles} />
+              <button type="submit">Upload</button>
+              </form>
               <button type="submit" onClick={onSubmit}>
-                Submit
+                Sign up now
               </button>
             </form>
           </div>
