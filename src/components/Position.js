@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Position = ({nameAndId, selectedPosition, selectedPositionId , radioHandler}) => {
-  console.log("name&id", nameAndId)
+//   console.log("name&id", nameAndId)
 
 
 

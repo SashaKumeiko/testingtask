@@ -3,7 +3,8 @@ import authHandler from '../requests/authHandler';
 
 import {getUsers, getPositions} from '../requests/fetchData';
 import User from './User';
-import Registration from './Registration';
+import { Formik } from 'formik';
+import RegisterForm from './RegisterForm';
 
 export const Users = () => {
   const [users, setUsers] = useState([]);
@@ -40,7 +41,7 @@ export const Users = () => {
       ))}
       </div>
       <div>
-      <Registration positions={positions}/>
+      <RegisterForm positions={positions}/>
       </div>
     </div>
   );
