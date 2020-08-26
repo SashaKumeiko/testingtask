@@ -3,7 +3,6 @@ import authHandler from '../requests/authHandler';
 
 import {getUsers, getPositions} from '../requests/fetchData';
 import User from './User';
-import { Formik } from 'formik';
 import RegisterForm from './RegisterForm';
 
 export const Users = () => {

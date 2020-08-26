@@ -21,6 +21,7 @@ const RegisterSchema = Yup.object().shape({
 const RegisterForm = ({positions}) => {
   const [selectedPosition, setSelectedPosition] = useState('');
   const [selectedPositionId, setSelectedId] = useState('');
+  const [file, setFile] = useState(null)
 
   useEffect(() => {
     if (positions.length) {
@@ -34,20 +35,31 @@ const RegisterForm = ({positions}) => {
     setSelectedPosition(positionData.name);
     setSelectedId(positionData.id);
   };
+
+  const onChangeFiles=(e)=>{
+    setFile(e.target.files[0])
+  }
+  console.log(file)
+
   return (
     <div>
-      {positions.map(({id, name, defaultChecked}) => (
+    <form >
+    <h1>File Upload</h1>
+    <input type="file" onChange={onChangeFiles} />
+    <button type="submit">Upload</button>
+    </form>
+      {positions.map(({id, name}) => (
         <Position
           key={id}
           nameAndId={{name, id}}
           selectedPosition={selectedPosition}
           selectedPositionId={selectedPositionId}
-          defaultChecked={defaultChecked}
           radioHandler={radioHandler}
         />
       ))}
       <Formik
         positions={positions}
+        file
         selectedPosition
         setSelectedId
         initialValues={{
@@ -57,7 +69,7 @@ const RegisterForm = ({positions}) => {
         }}
         validationSchema={RegisterSchema}
         onSubmit={(values) => {
-          console.log(values, selectedPosition, selectedPositionId);
+          console.log(values, selectedPosition, selectedPositionId, file);
         }}
       >
         {({
