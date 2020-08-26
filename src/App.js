@@ -1,14 +1,12 @@
-import React,{useEffect} from 'react';
-import authHandler from './requests/authHandler'
+import React from 'react';
+import { Users } from './components/Users';
 
 function App() {
-  useEffect(()=>{
-      authHandler()
-  },[])
+ 
   return (
     <div className="App">
-   
      start
+     <Users/>
     </div>
   );
 }

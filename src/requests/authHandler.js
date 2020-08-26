@@ -4,17 +4,16 @@ import setToken from '../utils/setToken';
 const authHandler = () => {
   const token = localStorage.getItem('token');
   if (token) {
-    getUsers().catch(err=>receiveNewToken())
+    return new Promise((res,rej)=>{res()})
   } else {
-      receiveNewToken()
+     return handleNewToken()
   }
 };
 
-const receiveNewToken=()=>{
-    getTokenFromServer().then((res) => {
+const handleNewToken=()=>{
+   return getTokenFromServer().then((res) => {
         console.log(res.data.token);
         setToken(res.data.token)
-        getUsers()
       });
 }
 
@@ -24,10 +23,7 @@ const getTokenFromServer = async () => {
   );
 };
 
-const getUsers = async () => {
-    axios.get(
-        'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=5'
-      ).then(res=>console.log(res.data))
-}
+
+
 
 export default authHandler;
