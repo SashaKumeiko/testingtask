@@ -18,11 +18,12 @@
 }
 
 .navbar__brand {
+  @media(max-width: 576px){
     position: relative;
     left: 12px;
-    bottom: 2px;
+    bottom: 2px;}
 @media (min-width: 576px) {
-    position: relative;
+    position: relative!important;
     bottom: 2px;
 }
 }

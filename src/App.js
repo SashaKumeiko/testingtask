@@ -1,7 +1,7 @@
 import React from 'react';
 import { Users } from './components/Users/Users';
 import Header from './components/Header/Header';
-import {BrowserRouter} from 'react-router-dom'
+import FirstSection from './components/FirstSection/FirstSection';
 
 import './app.scss'
 
@@ -10,10 +10,9 @@ function App() {
   return (
     
     <div className="app">
-    <BrowserRouter>
      <Header/>
+     <FirstSection/>
      <Users/>
-     </BrowserRouter>
     </div>
    
   );
