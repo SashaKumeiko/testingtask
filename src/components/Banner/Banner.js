@@ -35,7 +35,9 @@ const Banner = () => {
           look forward to your submission. Good luck! The photo has to scale in
           the banner area on the different screens
         </div>
-        <Button text="Sign up now" />
+        <div className="button--pos">
+        <Button text="Sing up now" />
+        </div>
       </div>
     </div>
   );
