@@ -1,12 +1,12 @@
 import React from 'react'
 import './buttons.scss'
 
-const Button = ({text}) => {
+const FlatButton = ({text}) => {
     return (
-        <button className='button'>
+        <button className='flatButton'>
             {text}
         </button>
     )
 }
 
-export default Button
+export default FlatButton

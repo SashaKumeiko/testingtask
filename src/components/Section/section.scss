@@ -1,0 +1,69 @@
+@import '../../app.scss';
+
+.section {
+    height:862px;
+    padding-top:70px;
+    padding-bottom:70px;
+    padding-left:15px;
+    padding-right:10px;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section__heading {
+    font-family: 'Open sans',sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color:$color-header;
+    position:relative;
+    right:3px;
+    letter-spacing: -0.2px;
+}
+
+.section__imgContainer {
+    position: relative;
+    top:5px;
+    right:3px;
+    width:289px;
+    height:243px;
+    background-image:url('../../assets/man-laptop-v1.svg');
+    background-size:cover;
+}
+
+.section__contentTitle {
+    font-size: 24px;
+    font-family: 'Open sans',sans-serif;
+    color:$color-header;
+    position: relative;
+    right:3px;
+    top:22px;
+
+}
+
+.section__content1 {
+    text-align: justify;
+    position: relative;
+    top:15px;
+    font-size: 16px;
+    font-family: 'Open sans',sans-serif;
+    color:$color-text;
+    line-height: 24px;
+}
+.section__content2 {
+    text-align: justify;
+    position: relative;
+    top:2px;
+    font-size: 16px;
+    font-family: 'Open sans',sans-serif;
+    color:$color-text;
+    line-height: 24px;
+}
+
+.section__button--pos {
+    position: relative;
+    bottom: 6px;
+    right: 2px;
+}

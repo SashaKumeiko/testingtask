@@ -10,3 +10,16 @@
     font-family: 'Open sans', sans-serif;
     font-weight: 600;
   }
+
+  button:hover {
+      background-color:#D24335;
+  }
+
+.flatButton {
+    color: $primary-color;
+    border:none;
+    background-color:transparent;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+      
+}
