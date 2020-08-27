@@ -1,18 +1,87 @@
 @import '../../app.scss';
 
+.header {
+  height: 1000px;
+}
+
 .navbar {
-    background-color: $background-color!important;
-    color:$color-header!important;
+  background-color: $background-color !important;
+  color: $color-header !important;
+    padding:0!important ;
+
+  border: 1px solid black;
+
+  @media (min-width: 576px) {
+    padding: 0.6rem 1.7rem !important;
+    
+}
+}
+
+.navbar__brand {
+    position: relative;
+    left: 12px;
+    bottom: 2px;
+@media (min-width: 576px) {
+    position: relative;
+    bottom: 2px;
+}
 }
 
 .navbar__navlink {
-    color:$color-header!important;
+  color: $color-header !important;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+
+  @media(min-width: 992px){
+  font-size: 14px;
+  }
+
+}
+
+.nav-link:nth-child(2) {
+    @media(max-width: 992px) {
+        padding-top: 20px!important;
+    }
+}
+
+.nav-link {
+    @media(max-width: 992px){
+        padding:10px 12px!important;
+        
+    }
 }
 
 .navbar__navlink:hover {
-    color:red!important
-
+  color: red !important;
 }
 
-.nav-link.active{ color: $secondary-color!important}
+.nav-link.active {
+  color: $secondary-color !important;
+}
 
+.navbar-toggler {
+  border-color: transparent !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url('../../assets/menu-icon.svg') !important;
+}
+
+.navbar-nav {
+  @media (max-width: 992px) {
+    width: 80%;
+    // padding-left: 0.7rem !important ;
+    // padding-right: 0.7rem !important ;
+  }
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  @media (min-width: 992px) {
+    padding-right: 0.7rem !important;
+    padding-left: 0.9rem !important;
+  }
+}
+
+.navbar__line {
+  border-top: 1px solid lightgray;
+}

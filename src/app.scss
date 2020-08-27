@@ -2,4 +2,15 @@ $primary-color:#ef5b4c;
 $secondary-color:#007bff;
 $background-color:#fff;
 $background-color2:#f9f9f3;
-$color-header:#C5C5C7
+$color-header:#212529;
+body {
+    min-width: 360px;
+    max-width: 2560px;
+    margin: 0 auto;
+    width:100%
+}
+
+.app {
+    max-width:1170px;
+    margin: 0 auto;
+}

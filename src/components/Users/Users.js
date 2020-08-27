@@ -6,7 +6,6 @@ import User from './User';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import { useStateValue } from '../../contexts/stateProvider';
 import { INCREASE_QUANTITY } from '../../contexts/reducer';
-import {Route} from 'react-router-dom'
 
 export const Users = () => {
 const [{counter}, dispatch] = useStateValue()
