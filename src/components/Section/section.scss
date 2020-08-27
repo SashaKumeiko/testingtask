@@ -7,10 +7,17 @@
     padding-left:15px;
     padding-right:10px;
 
+}
+
+.sectionContainer {
+
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    @media(min-width: 576px){
+        flex-direction: row;
+    }
 }
 
 .section__heading {
@@ -25,7 +32,7 @@
 
 .section__imgContainer {
     position: relative;
-    bottom:4px;
+    top:24px;
     right:3px;
     width:289px;
     height:243px;
@@ -39,23 +46,24 @@
     color:$color-header;
     position: relative;
     left:3px;
-    bottom:4px;
+    top:64px;
 
 }
 
 .section__content1 {
     text-align: justify;
     position: relative;
-    top:8px;
+    top:74px;
     font-size: 16px;
     font-family: 'Open sans',sans-serif;
     color:$color-text;
     line-height: 24px;
+
 }
 .section__content2 {
     text-align: justify;
     position: relative;
-    top:14px;
+    top:84px;
     font-size: 16px;
     font-family: 'Open sans',sans-serif;
     color:$color-text;
@@ -64,6 +72,6 @@
 
 .section__button--pos {
     position: relative;
-    bottom: 6px;
-    right: 2px;
+    top: 94px;
+    left: 112px;
 }
