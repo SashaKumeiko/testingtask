@@ -1,0 +1,18 @@
+@import '../../app.scss';
+
+.navbar {
+    background-color: $background-color!important;
+    color:$color-header!important;
+}
+
+.navbar__navlink {
+    color:$color-header!important;
+}
+
+.navbar__navlink:hover {
+    color:red!important
+
+}
+
+.nav-link.active{ color: $secondary-color!important}
+

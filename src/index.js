@@ -5,9 +5,6 @@ import * as serviceWorker from './serviceWorker';
 import { StateProvider } from './contexts/stateProvider';
 import reducer, { initialState } from './contexts/reducer';
 
-
-
-
 ReactDOM.render(
   <StateProvider initialState={initialState} reducer={reducer}>
 

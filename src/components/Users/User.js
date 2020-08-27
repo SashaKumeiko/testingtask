@@ -1,9 +1,10 @@
 import React from 'react'
+import './users.scss'
 
  const User = ({name,position,phone,email}) => {
     return (
-        <div>
-            <div>{name}</div>
+        <div className="user">
+            <div className="user__name">{name}</div>
             <div>{position}</div>
             <div>{phone}</div>
             <div>{email}</div>

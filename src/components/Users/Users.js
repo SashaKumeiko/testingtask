@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import authHandler from '../requests/authHandler';
+import authHandler from '../../requests/authHandler';
 
-import {getUsers, getPositions} from '../requests/fetchData';
+import {getUsers, getPositions} from '../../requests/fetchData';
 import User from './User';
-import RegisterForm from './RegisterForm';
-import { useStateValue } from '../contexts/stateProvider';
-import { INCREASE_QUANTITY } from '../contexts/reducer';
+import RegisterForm from '../RegisterForm/RegisterForm';
+import { useStateValue } from '../../contexts/stateProvider';
+import { INCREASE_QUANTITY } from '../../contexts/reducer';
+import {Route} from 'react-router-dom'
 
 export const Users = () => {
 const [{counter}, dispatch] = useStateValue()
@@ -50,9 +51,9 @@ console.log(counter)
       ))}
       </div>
       {showMoreVisible ? <button onClick={getMoreUsers}>Show more</button>:<div></div>}
-      <div>
+      
       <RegisterForm positions={positions} setUsers/>
-      </div>
+   
     </div>
   );
 };

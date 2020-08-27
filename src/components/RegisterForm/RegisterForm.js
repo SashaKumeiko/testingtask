@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
-import Position from './Position';
-import signUp from '../requests/signUp';
-import { useStateValue } from '../contexts/stateProvider';
-import { RESET_QUANTITY } from '../contexts/reducer';
+import Position from '../Position/Position';
+import signUp from '../../requests/signUp';
+import { useStateValue } from '../../contexts/stateProvider';
+import { RESET_QUANTITY } from '../../contexts/reducer';
 
 
 
@@ -47,7 +47,7 @@ const RegisterForm = ({positions, setUsers}) => {
   }
   console.log(photo)
   return (
-    <div>
+    <div id="registration">
     
       {positions.map(({id, name}) => (
         <Position
