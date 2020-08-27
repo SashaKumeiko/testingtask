@@ -1,9 +1,10 @@
 import React from 'react';
 import { Users } from './components/Users/Users';
 import Header from './components/Header/Header';
-import FirstSection from './components/FirstSection/FirstSection';
+import Banner from './components/Banner/Banner';
 
 import './app.scss'
+
 
 function App() {
  
@@ -11,7 +12,7 @@ function App() {
     
     <div className="app">
      <Header/>
-     <FirstSection/>
+     <Banner/>
      <Users/>
     </div>
    
