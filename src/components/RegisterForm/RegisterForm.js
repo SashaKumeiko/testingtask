@@ -5,6 +5,7 @@ import Position from '../Position/Position';
 import signUp from '../../requests/signUp';
 import {useStateValue} from '../../contexts/stateProvider';
 import {RESET_QUANTITY} from '../../contexts/reducer';
+import Button from '../Buttons/Button'
 
 import './registerForm.scss'
 
@@ -136,8 +137,10 @@ const RegisterForm = ({positions, setUsers}) => {
                 label="Phone number"
                 required
               />
+              <span className="registerForm__textUnderPhone">Enter phone number in open format</span>
+
               </div>
-              <div><span className="registerForm__textUnderPhone">Enter phone number in open format</span></div>
+              <div></div>
               <div className="registerForm__positionsContainer">
               <h6>Select your position</h6>
               <form className='registerForm__positions'>
@@ -156,10 +159,9 @@ const RegisterForm = ({positions, setUsers}) => {
                 <span>{photo?.name}</span>
                 <input type="file" onChange={onChangeFiles} id='upload' className="d-none"/>
               </form>
+              <Button text="Sign up now" type="submit" onClick={onSubmit} additionalClass="button--regPos"/>
+
               </div>
-              <button type="submit" onClick={onSubmit}>
-                Sign up now
-              </button>
             </form>
           </div>
         )}
