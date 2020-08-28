@@ -1,16 +1,18 @@
 @import '../../app.scss';
 
 .section {
-    height:862px;
     padding-top:70px;
     padding-bottom:70px;
     padding-left:15px;
     padding-right:10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .sectionContainer {
-
+    height:600px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -25,8 +27,8 @@
     font-size: 30px;
     text-align: center;
     color:$color-header;
-    position:relative;
-    right:3px;
+    // position:relative;
+    // right:3px;
     letter-spacing: -0.2px;
 }
 
@@ -38,6 +40,7 @@
     height:243px;
     background-image:url('../../assets/man-laptop-v1.svg');
     background-size:cover;
+    min-width: 247px;
 }
 
 .section__contentTitle {
@@ -46,14 +49,14 @@
     color:$color-header;
     position: relative;
     left:3px;
-    top:64px;
+    top:14px;
 
 }
 
 .section__content1 {
     text-align: justify;
     position: relative;
-    top:74px;
+    top:24px;
     font-size: 16px;
     font-family: 'Open sans',sans-serif;
     color:$color-text;
@@ -63,7 +66,7 @@
 .section__content2 {
     text-align: justify;
     position: relative;
-    top:84px;
+    top:34px;
     font-size: 16px;
     font-family: 'Open sans',sans-serif;
     color:$color-text;
@@ -72,6 +75,6 @@
 
 .section__button--pos {
     position: relative;
-    top: 94px;
-    left: 112px;
+    top: 45px;
+    right: 2px;
 }

@@ -9,7 +9,7 @@ const Section = () => {
       <div className="sectionContainer">
 
           <div className="section__imgContainer" />
-        <div className="section__contentContainer d-block d-sm-flex flex-column">
+        <div className="section__contentContainer">
           <h4 className="section__contentTitle">
             I am cool frontend developer
           </h4>

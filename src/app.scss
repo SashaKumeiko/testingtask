@@ -5,6 +5,12 @@ $background-color2:#f9f9f3;
 $color-header:#212529;
 $color-text:#4C4B4B;
 
+html{
+
+    margin: 0 auto;
+    // overflow-x: hidden;
+}
+
 body {
     min-width: 360px;
     max-width: 2560px;
