@@ -12,13 +12,16 @@ const [{counter}, dispatch] = useStateValue()
 console.log(counter)
   const [users, setUsers] = useState([]);
   const [positions, setPositions] = useState([])
-  // const [countOfUsersToDisplay, setCount] = useState(6);
   const [showMoreVisible, toggleShowMore] = useState(true)
   useEffect(() => {
     async function fetchData() {
       await authHandler();
-      const users =  await getUsers(counter);
+      let users =  await getUsers(counter);
       if(users.length<counter ) toggleShowMore(false)
+      // eslint-disable-next-line no-restricted-globals
+      if(screen.width<576 ) {
+        users=users.slice(0,counter-counter/2)
+      }
       setUsers(users);
       console.log(users);
 
