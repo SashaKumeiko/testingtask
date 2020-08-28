@@ -100,7 +100,7 @@
   left: 1px;
   }
   @media(min-width: 992px){
-      left:22px;
+      left:8px;
   }
 
 }
@@ -115,12 +115,12 @@
   line-height: 24px;
   @media(min-width: 576px){
   max-width:430px;
-  margin-right: 33px;
+
   }
   @media(min-width: 992px){
     max-width:550px;
-    margin-right: 33px;
-    left:22px;
+    // margin-right: 33px;
+    left:8px;
     letter-spacing: -0.4px;
   }
     
@@ -136,12 +136,12 @@
   @media(min-width: 576px){
     letter-spacing: -0.1px;
     max-width:430px;
-    margin-right: 33px;
+    // margin-right: 33px;
     }
     @media(min-width: 992px){
         max-width:550px;
-        margin-right: 33px;
-        left:22px;
+        // margin-right: 33px;
+        left:8px;
 
         }
 }

@@ -3,10 +3,10 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import Position from '../Position/Position';
 import signUp from '../../requests/signUp';
-import { useStateValue } from '../../contexts/stateProvider';
-import { RESET_QUANTITY } from '../../contexts/reducer';
+import {useStateValue} from '../../contexts/stateProvider';
+import {RESET_QUANTITY} from '../../contexts/reducer';
 
-
+import './registerForm.scss'
 
 const RegisterSchema = Yup.object().shape({
   email: Yup.string().required('Email is required').email('Enter valid email'),
@@ -26,7 +26,7 @@ const RegisterSchema = Yup.object().shape({
 const RegisterForm = ({positions, setUsers}) => {
   const [selectedPosition, setSelectedPosition] = useState('');
   const [selectedPositionId, setSelectedId] = useState('');
-  const [photo, setFile] = useState(null)
+  const [photo, setFile] = useState(null);
   const [state, dispatch] = useStateValue();
 
   useEffect(() => {
@@ -42,22 +42,18 @@ const RegisterForm = ({positions, setUsers}) => {
     setSelectedId(positionData.id);
   };
 
-  const onChangeFiles=(e)=>{
-    setFile(e.target.files[0])
-  }
-  console.log(photo)
+  const onChangeFiles = (e) => {
+    setFile(e.target.files[0]);
+  };
+  console.log(photo);
   return (
-    <div id="registration">
-    
-      {positions.map(({id, name}) => (
-        <Position
-          key={id}
-          nameAndId={{name, id}}
-          selectedPosition={selectedPosition}
-          selectedPositionId={selectedPositionId}
-          radioHandler={radioHandler}
-        />
-      ))}
+    <div id="registration" className="registerForm">
+      <h2 className="registerForm__title">Register to get a work</h2>
+      <p className="registerForm__attention">
+        Attention! After successful registration and alert, update the list of
+        users in the block from the top
+      </p>
+
       <Formik
         setUsers={setUsers}
         positions={positions}
@@ -67,21 +63,20 @@ const RegisterForm = ({positions, setUsers}) => {
           email: '',
           name: '',
           phone: '',
-          photo: null
+          photo: null,
         }}
         validationSchema={RegisterSchema}
-        onSubmit={ async (values) => {
-          if(!photo) {
-            alert("select the file!");
-            return
-        }
+        onSubmit={async (values) => {
+          if (!photo) {
+            alert('select the file!');
+            return;
+          }
           values.position_id = selectedPositionId;
-          values.photo = photo
+          values.photo = photo;
           console.log(values);
-         if(await signUp(values)){
-          dispatch({type:RESET_QUANTITY})
-         }
-
+          if (await signUp(values)) {
+            dispatch({type: RESET_QUANTITY});
+          }
         }}
       >
         {({
@@ -95,7 +90,10 @@ const RegisterForm = ({positions, setUsers}) => {
         }) => (
           <div>
             <form onSubmit={handleSubmit}>
+            <div className="registerForm__inputsContainer">
+            <div className='registerForm__inputName'><span>Name</span></div>
               <input
+              className='registerForm__input'
                 placeholder="name"
                 type="text"
                 name="name"
@@ -108,7 +106,9 @@ const RegisterForm = ({positions, setUsers}) => {
                 label="First Name"
                 required
               />
+            <div className='registerForm__inputName'><span >Email</span></div>
               <input
+              className='registerForm__input'
                 type="text"
                 name="email"
                 onChange={handleChange}
@@ -121,8 +121,9 @@ const RegisterForm = ({positions, setUsers}) => {
                 label="Email"
                 required
               />
-
+              <div className='registerForm__inputName'><span>Phone number</span></div>
               <input
+              className='registerForm__input'
                 type="text"
                 name="phone"
                 onChange={handleChange}
@@ -135,11 +136,27 @@ const RegisterForm = ({positions, setUsers}) => {
                 label="Phone number"
                 required
               />
-              <form >
-              <h1>File Upload</h1>
-              <input type="file" onChange={onChangeFiles} />
-              <button type="submit">Upload</button>
+              </div>
+              <div><span className="registerForm__textUnderPhone">Enter phone number in open format</span></div>
+              <div className="registerForm__positionsContainer">
+              <h6>Select your position</h6>
+              <form className='registerForm__positions'>
+                {positions.map(({id, name}) => (
+                  <Position
+                    key={id}
+                    nameAndId={{name, id}}
+                    selectedPosition={selectedPosition}
+                    selectedPositionId={selectedPositionId}
+                    radioHandler={radioHandler}
+                  />
+                ))}
+               
+                <h6 className='registerForm__uploadTitle'>Photo</h6>
+                <label className='registerForm__upload' for="upload"><div> Upload your photo <span className='browse'>Browse</span> </div></label>
+                <span>{photo?.name}</span>
+                <input type="file" onChange={onChangeFiles} id='upload' className="d-none"/>
               </form>
+              </div>
               <button type="submit" onClick={onSubmit}>
                 Sign up now
               </button>

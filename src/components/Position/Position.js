@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './position.scss'
+
 const Position = ({nameAndId, selectedPosition, selectedPositionId , radioHandler}) => {
 
     return (
-    <div>
+    <div className='position'>
       <input
         type="radio"
         name={nameAndId.name}
