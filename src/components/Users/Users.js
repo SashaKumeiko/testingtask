@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import authHandler from '../../requests/authHandler';
-
 import {getUsers, getPositions} from '../../requests/fetchData';
 import User from './User';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import { useStateValue } from '../../contexts/stateProvider';
 import { INCREASE_QUANTITY } from '../../contexts/reducer';
+
+import './users.scss'
+import  Button  from '../../components/Buttons/Button';
 
 export const Users = () => {
 const [{counter}, dispatch] = useStateValue()
@@ -22,8 +24,10 @@ console.log(counter)
       if(screen.width<576 ) {
         users=users.slice(0,counter-counter/2)
       }
+      console.log(users)
+      users.sort((a,b)=>{return b.registration_timestamp-a.registration_timestamp})
       setUsers(users);
-      console.log(users);
+      console.log('sorted users',users);
 
       const positions = await getPositions()
       console.log(positions)
@@ -39,11 +43,14 @@ console.log(counter)
   }
   return (
     <div>
+    <div className='users'>
+    <h1 className='users__title'>Our cheerful users</h1>
+    <h6 className='users__attention'>Attention! Sorting users by registration date</h6>
     
-    
-    <div>
-      {users.map(({id, name, position, phone, email}) => (
+    <div className='users__container'>
+      {users.map(({id, name, position, phone, email,photo}) => (
         <User
+          photo={photo}
           key={id}
           name={name}
           phone={phone}
@@ -52,10 +59,10 @@ console.log(counter)
         ></User>
       ))}
       </div>
-      {showMoreVisible ? <button onClick={getMoreUsers}>Show more</button>:<div></div>}
-      
+      {showMoreVisible ? <Button text='Show more' additionalClass="button--margin" onClick={getMoreUsers}></Button>:<div></div>}
+      </div>
       <RegisterForm positions={positions} setUsers/>
-   
-    </div>
+      </div>
+    
   );
 };
