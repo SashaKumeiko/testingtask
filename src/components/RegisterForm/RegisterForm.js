@@ -88,7 +88,7 @@ const RegisterForm = ({positions, setUsers}) => {
           touched,
           onSubmit,
         }) => (
-          <div>
+          <div className='w-100'>
             <form onSubmit={handleSubmit}>
             <div className="registerForm__inputsContainer">
             <div className='registerForm__inputName'><span>Name</span></div>
