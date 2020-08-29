@@ -30,6 +30,8 @@
 }
 
 .section__heading {
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-family: 'Open sans', sans-serif;
   font-size: 30px;
   text-align: center;
@@ -86,10 +88,15 @@
     @media(min-width: 992px){
         top:16px;
     }
+    @media(min-width: 900px) and (max-width: 1000px){
+      margin-right:55px;
+    }
 
 }
 
 .section__contentTitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 24px;
   font-family: 'Open sans', sans-serif;
   color: $color-header;
@@ -106,6 +113,8 @@
 }
 
 .section__content1 {
+  height:72px;
+  overflow: hidden;
   text-align: justify;
   position: relative;
   top: 24px;
@@ -119,13 +128,16 @@
   }
   @media(min-width: 992px){
     max-width:550px;
-    // margin-right: 33px;
     left:8px;
     letter-spacing: -0.4px;
   }
     
 }
+
+
 .section__content2 {
+  height:96px;
+  overflow: hidden;
   text-align: justify;
   position: relative;
   top: 34px;
@@ -136,11 +148,9 @@
   @media(min-width: 576px){
     letter-spacing: -0.1px;
     max-width:430px;
-    // margin-right: 33px;
     }
     @media(min-width: 992px){
         max-width:550px;
-        // margin-right: 33px;
         left:8px;
 
         }

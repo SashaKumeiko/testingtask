@@ -23,6 +23,7 @@ const Section = () => {
             bower/npm/yarn you will get bonus points. If you use any task runner
             (gulp/webpack) you will get bonus points as well. Slice service
             directory page P​SD mockup​ into HTML5/CSS3.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur aliquam temporibus ab earum praesentium doloremque aut doloribus amet, dolore obcaecati pariatur dicta, nulla magni numquam reiciendis vitae minus harum hic.
           </p>
         </div>
       </div>

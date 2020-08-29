@@ -9,6 +9,8 @@
 }
 
 .registerForm__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-family: "Open sans", sans-serif;
   font-size: 30px;
 

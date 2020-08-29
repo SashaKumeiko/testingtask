@@ -11,7 +11,7 @@ const Position = ({
   return (
     <div className="position">
       <label className="container">
-        {nameAndId.name}
+        <span>{nameAndId.name}</span>
         <input
           type="radio"
           checked="checked"
