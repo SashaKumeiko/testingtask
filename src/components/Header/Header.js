@@ -39,7 +39,7 @@ const Header = () => {
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             Terms and Conditions
           </Nav.Link>
-          <div className="navbar__line d-lg-none" />
+          <div className="navbar__line d-lg-none line-pos" />
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             How it works
           </Nav.Link>
@@ -55,7 +55,7 @@ const Header = () => {
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             Contact us
           </Nav.Link>
-          <div className="navbar__line d-lg-none" />
+          <div className="navbar__line d-lg-none line-pos" />
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             Articles
           </Nav.Link>

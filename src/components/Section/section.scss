@@ -24,41 +24,34 @@
   }
   @media (min-width: 992px) {
     height: 400px;
-
   }
-
 }
 
 .section__heading {
-  max-width:250px;
- 
+  max-width: 250px;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-family: 'Open sans', sans-serif;
   font-size: 30px;
   text-align: center;
   color: $color-header;
-
+  position: relative;
+  top: 3px;
+  right: 13px;
   letter-spacing: -0.2px;
   @media (min-width: 576px) {
-    max-width:400px;
-
+    max-width: 400px;
     font-size: 40px;
     letter-spacing: -0.3px;
-    position: relative;
     right: 3px;
     top: 40px;
   }
   @media (min-width: 992px) {
-    max-width:800px;
+    max-width: 800px;
     font-size: 50px;
     letter-spacing: -0.6px;
-    top:80px;
-
-
+    top: 80px;
   }
-
-
 }
 
 .section__imgContainer {
@@ -74,30 +67,29 @@
     background-size: contain;
     background-repeat: no-repeat;
     top: 25px;
-    left:-15px;
+    left: -15px;
   }
   @media (min-width: 992px) {
     width: 339px;
     height: 285px;
     top: 58px;
-    left:5px;
-
+    left: -15px;
   }
 }
 
 .section__contentContainer {
-    @media(min-width: 576px){
+  @media (min-width: 576px) {
     position: relative;
-    top:15px;
-    left:15px;
-    }
-    @media(min-width: 992px){
-        top:16px;
-    }
-    @media(min-width: 900px) and (max-width: 1000px){
-      margin-right:55px;
-    }
-
+    top: 15px;
+    left: 15px;
+  }
+  @media (min-width: 992px) {
+    top: 16px;
+    left: 25px;
+  }
+  @media (min-width: 900px) and (max-width: 1000px) {
+    margin-right: 55px;
+  }
 }
 
 .section__contentTitle {
@@ -108,18 +100,18 @@
   color: $color-header;
   position: relative;
   left: 3px;
-  top: 14px;
-  @media(min-width: 576px){
-  left: 1px;
+  top: 15px;
+  @media (min-width: 576px) {
+    left: 1px;
+    bottom:0px;
   }
-  @media(min-width: 992px){
-      left:8px;
+  @media (min-width: 992px) {
+    left: 8px;
   }
-
 }
 
 .section__content1 {
-  height:72px;
+  height: 92px;
   overflow: hidden;
   text-align: justify;
   position: relative;
@@ -128,18 +120,16 @@
   font-family: 'Open sans', sans-serif;
   color: $color-text;
   line-height: 24px;
-  @media(min-width: 576px){
-  max-width:430px;
-
+  @media (min-width: 576px) {
+    height: 72px;
+    max-width: 430px;
   }
-  @media(min-width: 992px){
-    max-width:550px;
-    left:8px;
+  @media (min-width: 992px) {
+    max-width: 550px;
+    left: 8px;
     letter-spacing: -0.4px;
   }
-    
 }
-
 
 .section__content2 {
   // height:96px;
@@ -151,26 +141,25 @@
   font-family: 'Open sans', sans-serif;
   color: $color-text;
   line-height: 24px;
-  @media(min-width: 576px){
+  @media (min-width: 576px) {
     letter-spacing: -0.1px;
-    max-width:430px;
-    }
-    @media(min-width: 992px){
-        max-width:550px;
-        left:8px;
-
-        }
+    max-width: 430px;
+  }
+  @media (min-width: 992px) {
+    max-width: 550px;
+    left: 8px;
+  }
 }
 
 .section__button--pos {
   position: relative;
   top: 45px;
-  @media(min-width: 576px){
-      top:40px;
-      right:30px;
+  @media (min-width: 576px) {
+    top: 40px;
+    right: 30px;
   }
-  @media(min-width: 992px){
-    top:3px;
-    right:23px
+  @media (min-width: 992px) {
+    top: 3px;
+    right: 23px;
   }
 }

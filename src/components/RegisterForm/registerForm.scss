@@ -73,7 +73,7 @@
   font-size: 12px;
   width: 92%;
   position: relative;
-  bottom:25px;
+  bottom:20px;
   @media (min-width: 576px) {
     width: 468px;
   }
@@ -102,22 +102,30 @@ right:165px;
   @media (min-width: 576px) {
     width: 468px;
     margin-top: 12px;
-
+    position: relative;
+    left:10px;
   }
 }
 
 .registerForm__uploadTitle {
   margin-top: 10px;
+  position: relative;
+  right:10px;
 }
 
 .registerForm__uploadContainer {
   display: flex;
+  position: relative;
+  right:15px;
 }
 
 .registerForm__upload {
   border: 1px solid lightgray;
   color: #6c757d;
   border-radius: 3px;
+  position: relative;
+  right:10px;
+
 }
 
 .registerForm__upload div {
@@ -143,8 +151,12 @@ right:165px;
   color: $color-header;
   padding: 5px 15px;
   position: absolute;
-  right: 0;
-  top: 0;
+  border-right:2px solid lightgray;
+  border-top:2px solid lightgray;
+
+
+  right: -1px;
+  top: -1px;
 }
 
 .button--regPos {
