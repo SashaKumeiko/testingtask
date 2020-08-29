@@ -48,7 +48,6 @@ const RegisterForm = ({positions, setUsers}) => {
   const onChangeFiles = (e) => {
     setFile(e.target.files[0]);
   };
-  console.log(photo);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -89,7 +88,6 @@ const RegisterForm = ({positions, setUsers}) => {
           }
           values.position_id = selectedPositionId;
           values.photo = photo;
-          console.log(values);
           if (await signUp(values)) {
             dispatch({type: RESET_QUANTITY});
             handleShow();

@@ -31,7 +31,7 @@
 }
 
 .banner__title {
-  text-overflow: ellipsis;
+  // text-overflow: ellipsis;
   white-space: nowrap;
   line-height:1.15;
   color:white;
@@ -71,11 +71,16 @@
   position:relative;
   bottom:10px;
   @media(min-width: 768px){
-    width:529px;
+    width:469px;
     height:110px;
     position:relative;
-    bottom:14px;
+    bottom:24px;
     letter-spacing: -0.05px;
+  }
+  @media(min-width: 992px){
+    bottom:14px;
+    width:529px;
+
   }
 
 }
