@@ -101,9 +101,9 @@
   }}
 
   .banner__title div  {
-    max-width:350px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    // max-width:350px;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
     white-space: nowrap;
     @media(min-width:576px){
     max-width:900px;
