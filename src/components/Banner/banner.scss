@@ -41,20 +41,16 @@
   text-align: center;
   position: relative;
   top:10px;
-  @media(min-width: 576px)and(max-width: 921px){
+  @media(min-width: 576px){
     font-size: 40px;
     text-align: start;
     top:-9px;
     letter-spacing: -0.5px;
 
   }
-  @media(min-width: 922px){
-    text-align: start;
-
+    @media(min-width: 1000px){
     font-size: 50px;
-    position: relative;
-    top:35px;
-    letter-spacing: -0.5px;
+      top:37px;
     }
 
 }
@@ -73,11 +69,11 @@
   height:134px;
   position:relative;
   bottom:10px;
-  @media(min-width: 992px){
+  @media(min-width: 768px){
     width:529px;
     height:110px;
     position:relative;
-    bottom:18px;
+    bottom:14px;
     letter-spacing: -0.05px;
   }
 
@@ -94,3 +90,19 @@
   bottom:48px;
 
   }}
+
+  .banner__title div  {
+    max-width:350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @media(min-width:576px){
+    max-width:900px;
+
+    }
+
+    @media(min-width:992px){
+      max-width:1500px;
+  
+      }
+  }
