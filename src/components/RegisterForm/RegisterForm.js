@@ -174,7 +174,7 @@ const RegisterForm = ({positions, setUsers}) => {
               </div>
               <div></div>
               <div className="registerForm__positionsContainer">
-                <h6>Select your position</h6>
+                <h6 className='registerForm__positionsTitle'>Select your position</h6>
                 <form className="registerForm__positions">
                   {positions.map(({id, name}) => (
                     <Position
