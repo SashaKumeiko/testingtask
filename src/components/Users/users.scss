@@ -51,7 +51,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    width: 220px;
+    width: 200px;
 }
 
 .user__photo {
@@ -63,6 +63,18 @@
 .user__name {
     font-size: 24px;
     margin-bottom: 7px;
+    margin-top: 20px;
+
+}
+
+.user__position {
+    margin-top: 21px;
+}
+.user__email {
+    margin-top: 12px;
+}
+.user__phone {
+    margin-top: 12px;
 }
 
 .user__position, .user__email, .user__phone {

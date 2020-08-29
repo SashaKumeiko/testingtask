@@ -6,24 +6,28 @@ import './header.scss';
 
 const Header = () => {
   return (
-    <Navbar expand="lg" sticky="top" className="navbar justify-content-between pt-2 pb-2">
+    <Navbar
+      expand="lg"
+      sticky="top"
+      className="navbar justify-content-between pt-2 pb-2"
+    >
       <Navbar.Brand href="#home" className="navbar__brand ">
         <img src={logo} alt="" />
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" >
-      
-      
-      </Navbar.Toggle>
+      <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
       <Navbar.Collapse id="basic-navbar-nav" className="flex-grow-0">
         <Nav className="mr-auto">
-          <div className='navbar__line d-lg-none' />
+          <div className="navbar__line d-lg-none" />
           <Nav.Link href="#registration" className="navbar__navlink">
             About me
           </Nav.Link>
           <Nav.Link href="#registration" className="navbar__navlink">
             Relationships
           </Nav.Link>
-          <Nav.Link href="#registration" className="navbar__navlink d-none d-lg-flex">
+          <Nav.Link
+            href="#registration"
+            className="navbar__navlink d-none d-lg-flex"
+          >
             Requirements
           </Nav.Link>
           <Nav.Link href="#registration" className="navbar__navlink">
@@ -35,7 +39,7 @@ const Header = () => {
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             Terms and Conditions
           </Nav.Link>
-          <div className='navbar__line d-lg-none' />
+          <div className="navbar__line d-lg-none" />
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             How it works
           </Nav.Link>
@@ -46,12 +50,12 @@ const Header = () => {
             Help
           </Nav.Link>
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
-           Live testimonial
+            Live testimonial
           </Nav.Link>
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             Contact us
           </Nav.Link>
-          <div className='navbar__line d-lg-none' />
+          <div className="navbar__line d-lg-none" />
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             Articles
           </Nav.Link>
@@ -62,13 +66,11 @@ const Header = () => {
             Testimonials
           </Nav.Link>
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
-           Licenses
+            Licenses
           </Nav.Link>
           <Nav.Link href="#registration" className="navbar__navlink d-lg-none">
             Privacy policy
           </Nav.Link>
-
-
         </Nav>
       </Navbar.Collapse>
     </Navbar>

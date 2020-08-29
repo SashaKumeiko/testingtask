@@ -5,6 +5,7 @@ import Banner from './components/Banner/Banner';
 import Section from './components/Section/Section';
 
 import './app.scss'
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
      <Banner/>
      <Section/>
      <Users/>
+    <Footer/>
     </div>
    
   );

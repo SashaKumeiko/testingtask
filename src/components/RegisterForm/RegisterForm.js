@@ -6,9 +6,10 @@ import signUp from '../../requests/signUp';
 import {useStateValue} from '../../contexts/stateProvider';
 import {RESET_QUANTITY} from '../../contexts/reducer';
 import Button from '../Buttons/Button';
+import {Modal} from 'react-bootstrap';
 
 import './registerForm.scss';
-import {Modal} from 'react-bootstrap';
+
 const RegisterSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Required'),
   name: Yup.string()
@@ -124,8 +125,9 @@ const RegisterForm = ({positions, setUsers}) => {
                   label="First Name"
                   required
                 />
-                <ErrorMessage name="name" />
-
+                <div className="error-container">
+                  <ErrorMessage name="name" />
+                </div>
                 <div className="registerForm__inputName">
                   <span>Email</span>
                 </div>
@@ -143,7 +145,9 @@ const RegisterForm = ({positions, setUsers}) => {
                   label="Email"
                   required
                 />
-                <ErrorMessage name="email" />
+                <div className="error-container">
+                  <ErrorMessage name="email" />
+                </div>
                 <div className="registerForm__inputName">
                   <span>Phone number</span>
                 </div>
@@ -164,7 +168,9 @@ const RegisterForm = ({positions, setUsers}) => {
                 <span className="registerForm__textUnderPhone">
                   Enter phone number in open format
                 </span>
-                <ErrorMessage name="phone" />
+                <div className="error-container">
+                  <ErrorMessage name="phone" />
+                </div>
               </div>
               <div></div>
               <div className="registerForm__positionsContainer">
