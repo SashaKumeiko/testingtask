@@ -82,6 +82,12 @@
   }
 }
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .section__imgContainer{
+    background-image: url('../../assets/man-laptop-v1.svg');
+  }
+}
+
 
 .section__contentContainer {
   @media (min-width: 576px) {
